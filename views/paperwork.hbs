@@ -1,0 +1,31 @@
+<div>
+    <object data="/files/get?f={{fileaddr}}" type="application/pdf">
+    </object>
+
+    {{#if canSubmit}}
+        <form action="/paperwork/{{id}}" method="post">
+            <label>Comment: </label><br>
+            <textarea name="comment"></textarea><br>
+            <label>Mark: </label>
+            <input id="mark" type="number" min="1" max="5">
+            <input type="button" value="Submit">
+        </form>
+    {{/if}}
+</div>
+
+<div>
+    <ul>
+        {{#each comments}}
+            <li>
+                <div>
+                    <span class="label">Comment:</span>
+                    <p>{{this.text}}</p>
+                    <span class="label">Mark: </span> {{this.mark}}
+                    <br>
+                    <span class="label">Author: </span>
+                    {{this.author}}
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>

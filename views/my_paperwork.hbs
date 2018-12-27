@@ -1,0 +1,10 @@
+<a href="/paperwork/upload">Upload</a>
+<a href="/paperwork/review">Review</a>
+<ul>
+    {{#each paperwork}}
+    <li>
+        <span class="paperwork_title">{{this.title}}</span>
+        <a href="/paperwork/{{this.id}}">More</a>
+    </li>
+    {{/each}}
+</ul>
